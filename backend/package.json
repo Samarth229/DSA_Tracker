@@ -1,0 +1,36 @@
+{
+  "name": "dsa-tracker-backend",
+  "version": "1.0.0",
+  "description": "DSA Learning Tracker Backend API",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "migrate": "node src/migrations/migrations.js",
+    "seed": "node src/seeds/seedTopicsComprehensive.js",
+    "seed-diagrams": "node src/seeds/seedDiagrams.js",
+    "seed-leetcode": "node src/seeds/seedLeetcode.js",
+    "setup": "npm run migrate && npm run seed",
+    "setup-enhanced": "npm run migrate && npm run seed && npm run seed-diagrams && npm run seed-leetcode",
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3",
+    "pino": "^8.17.1",
+    "pino-pretty": "^10.3.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.4"
+  }
+}
